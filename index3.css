@@ -1,0 +1,372 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.webpage {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+
+    contain: paint;
+}
+
+.dis1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*--============================
+-----------nav head  --========
+=============================---*/
+.head {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: black;
+    width: 100%;
+
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    padding: 5px 10px 3.2px;
+}
+
+.head>input,
+label {
+    display: none;
+    font-size: 18px;
+}
+
+.logo {
+    padding: 26px 14px;
+    font-weight: bold;
+    background-color: blue;
+    border-radius: 50%;
+    font-size: 15px;
+    color: white;
+
+}
+
+#checkbar:checked+.rightsubnav {
+    left: 0px;
+    /* background-color: brown; */
+
+}
+
+.owncheckbar {
+    width: 28px;
+    height: 21px;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 4.5px;
+}
+
+.owncheckbar span {
+    display: inline-block;
+    background-color: blue;
+    height: 3.4px;
+    width: 100%;
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#checkbar:checked+.owncheckbar span:nth-child(1) {
+    transform: rotate(43deg) translate(4px, 6px);
+}
+
+#checkbar:checked+.owncheckbar span:nth-child(2) {
+    opacity: 0;
+}
+
+#checkbar:checked+.owncheckbar span:nth-child(3) {
+    transform: rotate(-43deg) translate(4px, -7px);
+}
+
+#checkbar:checked~.rightsubnav {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.rightsubnav {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+}
+
+.rightsubnav>.links {
+    padding: 2px 14px;
+    transition: all 1.2s;
+    margin: auto;
+    gap: 19px;
+    display: flex;
+    align-items: center;
+}
+
+.rightsubnav>.links a {
+    text-decoration: none;
+    /* font-weight: bold; */
+    transition: all 1.4s;
+    position: relative;
+    padding: 3.5px 7px;
+    /* background-color: brown; */
+    color: black;
+    font-size: 18px;
+    ;
+}
+
+.nav-bt {
+    background-color: blue;
+    color: white;
+    border-radius: 19px;
+    padding: 11px 22px;
+    ;
+    border: none;
+    outline: none;
+    gap: 4px;
+    font-size: 14px;
+    ;
+}
+
+.nav-bt i {
+    padding-right: 5px;
+}
+
+
+
+   /*-----------first home page 1-----------*/
+
+    .fp{
+        min-height:45vh;
+        width:100%;
+
+        background-color: blue;
+        background-image: url(./useage/hp-3.png);
+        background-position: left;
+        background-size: contain;
+        background-repeat: no-repeat;
+        color:white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .fp  h1{
+        font-size: 70px;;
+    }
+
+
+
+
+
+/*--------------footer-----*/
+.theend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 28px 24px;
+    width:100%;
+}
+
+.leftfoot,
+.rightfoot {
+
+    padding-top: 19px;
+}
+
+
+.leftfoot {
+    width: 24%;
+
+}
+
+.leftfoot h3:first-child {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: 8px;
+    ;
+}
+
+
+.footicon{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+}
+
+.iconft {
+    background-color: blue;
+    color: white;
+    font-size: 19px;
+    width: 26px;
+    /* height:26px; */
+    padding: 10px 19px 8px;
+    border-radius: 50%;
+}
+
+
+.rightfoot {
+    width: 60%;
+    gap: 12px;
+    justify-content: space-between;
+    /*m1*/
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+
+    /*m2*/
+    /* display:flex;
+    flex-wrap:wrap; */
+}
+
+.linkft {
+    /*m2*/
+    /* width:20%; */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.linkft p:first-child {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+}
+
+.linkft a {
+    font-size: 14px;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+
+@media only screen and (min-width:600px) and (max-width:900px) {
+
+    .head>label {
+        display: flex;
+
+    }
+
+    .head .rightsubnav {
+        position: fixed;
+        top: 60px;
+        width: 100%;
+        height: 80vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        padding-top: 45px;
+        padding-bottom: 14px;
+        border-radius: 12px;
+        font-size: 19px;
+        left: 120%;
+        color: white;
+        background-color: transparent;
+        backdrop-filter: blur(5px) brightness(120%);
+    }
+
+    .links {
+        flex-direction: column;
+    }
+
+
+
+
+
+
+
+    /*----footet----------*/
+    .twoway {
+        width: 100%;
+    }
+     .rightfoot {
+        width: 100%;
+        grid-template-columns: auto auto;
+        row-gap: 31px;
+
+    }
+
+    .leftfoot,
+    .rightfoot {
+        width: 100%;
+    }
+
+    .rightfoot {
+        padding-top: 39px;
+    }
+}
+
+
+
+
+@media only screen and (min-width:300px) and (max-width:600px) {
+    .head>label {
+        display: flex;
+
+    }
+
+    .head .rightsubnav {
+        position: fixed;
+        top: 60px;
+        width: 100%;
+        height: 80vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        padding-top: 45px;
+        padding-bottom: 13px;
+        border-radius: 12px;
+        font-size: 19px;
+        left: 120%;
+        color: white;
+        background-color: transparent;
+        backdrop-filter: blur(5px) brightness(120%);
+
+    }
+
+    .links {
+        flex-direction: column;
+    }
+
+ 
+    /*----------home page-1-----------*/
+    
+
+
+
+
+
+    /*----footer-------*/
+     .left {
+        width: 100%;
+
+        grid-template-columns: auto;
+    }
+
+    .right {
+        width: 100%;
+    }
+
+
+    .leftfoot {
+
+        width: 100%;
+    }
+
+    .rightfoot {
+        width: 100%;
+        grid-template-columns:  auto;
+        row-gap: 31px;
+
+    }
+}
